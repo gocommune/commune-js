@@ -7,7 +7,7 @@ Commune is a no/low-code platform that helps you discover hidden user insights, 
 You can install the Commune SDK via npm:
 
 ```bash
-npm install @commune/commune-sdk
+npm install commune-sdk
 ```
 
 ## **Usage**
@@ -15,7 +15,7 @@ npm install @commune/commune-sdk
 Here's how you can use the Commune SDK:
 
 ```jsx
-import commune from "@commune/commune-sdk";
+import commune from "commune-sdk";
 
 const communeClient = commune.createClient({ projectKey: "YOUR_PROJECT_KEY" });
 
