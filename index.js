@@ -24,7 +24,7 @@ class CommuneClient {
       projectKey: this.projectKey,
       experimentKey,
     });
-    return this._parseVariables(result.variables);
+    return this._parseVariables(result?.variables);
   }
 
   async getMultivariant(experimentKey, distinctId = this.distinctId) {
@@ -33,7 +33,7 @@ class CommuneClient {
       distinctId,
     });
     const result = await this._makeGetRequest(url);
-    return this._parseVariables(result.variables);
+    return this._parseVariables(result?.variables);
   }
 
   async getVariant(experimentKey, variableName, distinctId = this.distinctId) {
@@ -42,7 +42,7 @@ class CommuneClient {
       distinctId,
     });
     const result = await this._makeGetRequest(url);
-    const variables = this._parseVariables(result.variables);
+    const variables = this._parseVariables(result?.variables);
     return variables?.[variableName];
   }
 
@@ -75,7 +75,6 @@ class CommuneClient {
       this._handleError(url, res);
       return null;
     }
-    const result = await res.json();
     try {
       return await res.json();
     } catch (error) {
