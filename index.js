@@ -20,7 +20,7 @@ class CommuneClient {
       experimentKey,
       distinctId,
     });
-    const result = this._makePostRequest(url, {
+    const result = await this._makePostRequest(url, {
       projectKey: this.projectKey,
       experimentKey,
     });
@@ -56,7 +56,7 @@ class CommuneClient {
         project_id: this.projectKey,
       },
     };
-    return this._makePostRequest(url, body);
+    return await this._makePostRequest(url, body);
   }
 
   _constructURL(endpoint, { experimentKey, distinctId }) {
